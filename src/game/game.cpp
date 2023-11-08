@@ -1,7 +1,3 @@
-// 
-// Домашнее задание #3
-// 
-
 #include "game.h"
 
 #include <cstdlib>

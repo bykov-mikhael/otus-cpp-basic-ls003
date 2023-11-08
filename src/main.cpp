@@ -1,3 +1,7 @@
+// 
+// Домашнее задание #3
+//
+
 #include "user_input/user_input.h"
 #include "game/game.h"
 
