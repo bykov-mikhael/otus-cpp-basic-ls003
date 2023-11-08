@@ -53,8 +53,6 @@ bool startGame(int &iMaxValue) {
   } while (iGenericVal != iOriginalVal);
   
   std::cout << std::endl << "Кол-во попыток: " << iAttemps << std::endl;
-  
-  getResult();
 
   return 0;
 }
@@ -66,6 +64,7 @@ bool getResult() {
     std::cout << "name: " << name << "\t" << "val: " << val << std::endl;
   }
   
+  std::cout << std::endl;
 
   return 0;
 }

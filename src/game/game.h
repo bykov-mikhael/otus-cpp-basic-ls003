@@ -4,6 +4,8 @@
 
 bool newValue(int &iMaxValue);
 
+int initResult();
+
 bool startGame(int &iMaxValue);
 
 bool getRndVal(int &iVal);
