@@ -54,6 +54,7 @@ bool startGame(int &iMaxValue) {
   
   std::cout << std::endl << "Кол-во попыток: " << iAttemps << std::endl;
   
+  getResult();
 
   return 0;
 }
