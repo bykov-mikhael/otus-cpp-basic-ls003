@@ -1,16 +1,19 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_VERBOSE_MAKEFILE ON)
+project(ls004.src)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(SOURCES  main.cpp)
 
-project(ls004)
+set(GAME  game/game.cpp
+          game/game.h)
 
-#флаги компилятора
-#target_compile_options()
+set(USER_INPUT  user_input/user_input.cpp
+                user_input/user_input.h)
 
-add_subdirectory(src)
-#add_subdirectory(dyn_lib)
-#add_subdirectory(sta_lib)
+add_executable(ls004.src    ${SOURCES}
+                            ${GAME}
+                            ${USER_INPUT})
+
+set_target_properties(ls004.src PROPERTIES  CXX_STANDARD 17
+                                            CXX_STANDARD_REQUIRED ON)
 

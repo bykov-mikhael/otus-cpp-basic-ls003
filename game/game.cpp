@@ -7,6 +7,7 @@
 #include <map>
 
 std::multimap<std::string, int> ResultTable;
+std::multimap<std::string, int> ResultTable;
 
 bool getRndVal(int &iVal) {
   const int max_value = 100;
@@ -52,6 +53,7 @@ bool startGame(int &iMaxValue) {
 
   } while (iGenericVal != iOriginalVal);
   
+
   std::cout << std::endl << "Кол-во попыток: " << iAttemps << std::endl;
 
   std::string usr;
@@ -79,7 +81,7 @@ bool getResult() {
 }
 
 int initResult() {
-
+// Key - Value
   ResultTable.insert(std::pair<std::string, int>("empty", 0));
   ResultTable.insert(std::pair<std::string, int>("empty", 1));
   ResultTable.insert(std::pair<std::string, int>("empty", 2));
@@ -91,13 +93,24 @@ int setResult(std::string &sName, int iValue) {
 
 std::cout << "insert to result table" << std::endl;
 
-  for (auto &[name, val] : ResultTable) {
-    if (iValue > val) {
-      val = iValue;
+  for (int i = 0; ResultTable.size() - 1; i++)
+  {
+    if (ResultTable.value_comp() > iValue) {
+      
     }
+    
   }
+  
+  
+  
+  // for (auto &[name, val] : ResultTable) {
+  //   if (iValue > val) {
+  //     val = iValue;
+  //     name = sName;
+  //   }
+  // }
 
-  getResult();  
+  // getResult();  
 
   return 0;
 }
