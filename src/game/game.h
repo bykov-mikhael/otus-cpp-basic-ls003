@@ -10,4 +10,6 @@ bool startGame(int &iMaxValue);
 
 bool getRndVal(int &iVal);
 
+int setResult(std::string &sName, int iValue);
+
 bool getResult();

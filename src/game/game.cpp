@@ -54,10 +54,19 @@ bool startGame(int &iMaxValue) {
   
   std::cout << std::endl << "Кол-во попыток: " << iAttemps << std::endl;
 
+  std::string usr;
+
+  std::cout << "Введите имя пользователя: ";
+  std::cin >> usr;
+
+  setResult(usr, iAttemps);
+
   return 0;
 }
 // вывод на печать табилцы резульататов
 bool getResult() {
+
+  std::cout << "getResult" << std::endl;
 
   std::cout << std::endl << "Таблица результатов:" << std::endl;
   for (auto &[name, val] : ResultTable) {
@@ -80,7 +89,15 @@ int initResult() {
 
 int setResult(std::string &sName, int iValue) {
 
-  
+std::cout << "insert to result table" << std::endl;
+
+  for (auto &[name, val] : ResultTable) {
+    if (iValue > val) {
+      val = iValue;
+    }
+  }
+
+  getResult();  
 
   return 0;
 }
