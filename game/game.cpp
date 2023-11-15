@@ -6,8 +6,11 @@
 #include <string>
 #include <map>
 
-std::multimap<std::string, int> ResultTable;
-std::multimap<std::string, int> ResultTable;
+// TKey - кол-во попыток
+// TValue - имя игрока
+// Сортировка по умолчанию - по возрастанию
+
+std::multimap<int, std::string, std::greater<int>> ResultTable;
 
 bool getRndVal(int &iVal) {
   const int max_value = 100;
@@ -82,9 +85,9 @@ bool getResult() {
 
 int initResult() {
 // Key - Value
-  ResultTable.insert(std::pair<std::string, int>("empty", 0));
-  ResultTable.insert(std::pair<std::string, int>("empty", 1));
-  ResultTable.insert(std::pair<std::string, int>("empty", 2));
+  ResultTable.insert(std::pair<int, std::string>(101, "empty"));
+  ResultTable.insert(std::pair<int, std::string>(110, "empty"));
+  ResultTable.insert(std::pair<int, std::string>(99, "empty"));
 
   return 0;
 }
@@ -92,25 +95,19 @@ int initResult() {
 int setResult(std::string &sName, int iValue) {
 
 std::cout << "insert to result table" << std::endl;
-
-  for (int i = 0; ResultTable.size() - 1; i++)
-  {
-    if (ResultTable.value_comp() > iValue) {
-      
-    }
-    
-  }
-  
-  
   
   // for (auto &[name, val] : ResultTable) {
-  //   if (iValue > val) {
-  //     val = iValue;
-  //     name = sName;
+  //   if (iValue < val) {
+  //     // вычисляем позицию для вставки новой записи
+  //     auto ans = ResultTable.find(sName);
+  //     std::pair<std::string, int> pair = {sName, iValue};
+      
+  //     ResultTable.insert(pair);
+  //     break;
   //   }
   // }
 
-  // getResult();  
+  getResult();  
 
   return 0;
 }
