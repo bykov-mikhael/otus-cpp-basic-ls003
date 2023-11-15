@@ -1,4 +1,5 @@
 #include "game.h"
+#include "../user_input/user_input.h"
 
 #include <cstdlib>
 #include <ctime>
@@ -12,17 +13,8 @@
 
 std::multimap<int, std::string, std::greater<int>> ResultTable;
 
-bool getRndVal(int &iVal) {
-  const int max_value = 100;
 
-	std::srand(std::time(nullptr)); // use current time as seed for random generator
-
-  iVal = std::rand() % 100;
-
-	return 0;
-}
-
-bool startGame(int &iMaxValue) {
+bool startGame(std::string &sName) {
   //число пользователя  
   int iGenericVal = 0;  
   //загаданное число
@@ -30,7 +22,7 @@ bool startGame(int &iMaxValue) {
   //кол-во попыток
   int iAttemps = 0;
   
-  if (getRndVal(iOriginalVal)) {
+  if (get_RandomVal(iOriginalVal)) {
     std::cerr << "rnd timer fault" << std::endl;
   }
   
@@ -59,16 +51,23 @@ bool startGame(int &iMaxValue) {
 
   std::cout << std::endl << "Кол-во попыток: " << iAttemps << std::endl;
 
-  std::string usr;
-
-  std::cout << "Введите имя пользователя: ";
-  std::cin >> usr;
-
-  setResult(usr, iAttemps);
+  setResult(sName, iAttemps);
 
   return 0;
 }
-// вывод на печать табилцы резульататов
+
+int setResult(std::string &sName, int iValue) {
+
+  std::cout << "insert to result table" << std::endl;
+  
+  ResultTable.insert(std::make_pair(iValue, sName));
+
+  getResult();  
+
+  return 0;
+}
+
+// вывод на печать таблицы резульататов
 bool getResult() {
 
   std::cout << "getResult" << std::endl;
@@ -85,29 +84,17 @@ bool getResult() {
 
 int initResult() {
 // Key - Value
-  ResultTable.insert(std::pair<int, std::string>(101, "empty"));
-  ResultTable.insert(std::pair<int, std::string>(110, "empty"));
-  ResultTable.insert(std::pair<int, std::string>(99, "empty"));
+  // ResultTable.insert(std::pair<int, std::string>(101, "empty"));
+  // ResultTable.insert(std::pair<int, std::string>(110, "empty"));
+  // ResultTable.insert(std::pair<int, std::string>(99, "empty"));
 
   return 0;
 }
 
-int setResult(std::string &sName, int iValue) {
+int saveResult(std::string &sName, int iScore) {
+  return 0;
+}
 
-std::cout << "insert to result table" << std::endl;
-  
-  // for (auto &[name, val] : ResultTable) {
-  //   if (iValue < val) {
-  //     // вычисляем позицию для вставки новой записи
-  //     auto ans = ResultTable.find(sName);
-  //     std::pair<std::string, int> pair = {sName, iValue};
-      
-  //     ResultTable.insert(pair);
-  //     break;
-  //   }
-  // }
-
-  getResult();  
-
+int loadResult(std::string &sName, int iScore) {
   return 0;
 }
