@@ -82,15 +82,6 @@ bool getResult() {
   return 0;
 }
 
-int initResult() {
-// Key - Value
-  // ResultTable.insert(std::pair<int, std::string>(101, "empty"));
-  // ResultTable.insert(std::pair<int, std::string>(110, "empty"));
-  // ResultTable.insert(std::pair<int, std::string>(99, "empty"));
-
-  return 0;
-}
-
 int saveResult(std::string &sName, int iScore) {
   return 0;
 }

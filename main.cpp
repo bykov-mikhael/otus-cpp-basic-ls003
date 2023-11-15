@@ -36,11 +36,6 @@
 int main(int argc, char *argv[]) {
 
   int iMenuIndex = 0;
-  // int iVal = 0;
-  // int &rVal = iVal;
-
-  initResult();
-
   std::string sName;
 
   std::cout << "Введите имя: ";

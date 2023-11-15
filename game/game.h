@@ -10,8 +10,6 @@
 
 bool newValue(int &iMaxValue);
 
-int initResult();
-
 bool startGame(std::string &sName);
 
 int setResult(std::string &sName, int iValue);
