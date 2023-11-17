@@ -10,12 +10,12 @@
 
 bool newValue(int &iMaxValue);
 
-bool startGame(int iMaxValue, std::string &sName);
+bool startGame(int iMaxValue, std::string &sName, int iTerminalRecCount);
 
-int setResult(std::string &sName, int iValue);
+int setResult(std::string &sName, int iValue, int iTerminalRecCount);
 
-bool getResult();
+bool getResult(int iRecCount);
 
 int saveResult(std::string &sName, int iScore);
 
-int loadResult(std::string &sName, int iScore);
+int loadResult();

@@ -34,7 +34,7 @@
 #include <iostream>
 
 int main(int argc, char *argv[]) {
-
+  const int iTerminalRecCount{3};
   int iMenuIndex = 0;
   std::string sName;
   std::string sPrmName;
@@ -50,8 +50,8 @@ int main(int argc, char *argv[]) {
     iMaxVal = iPrmValue;
   }
 
-  if (sPrmName == "- max") {
-    ;
+  if (sPrmName == "- table") {
+    getResult(std::stoi(argv[2]));
   }   
 
   std::cout << "Введите имя: ";
@@ -73,11 +73,13 @@ int main(int argc, char *argv[]) {
     
     switch (iMenuIndex) {
     case 1:
-      startGame(iMaxVal, sName);
+      startGame(iMaxVal, sName, iTerminalRecCount);
       break;
     
     case 2:
-      getResult();
+      getResult(iTerminalRecCount);
+
+      loadResult();
       break;
 
     case 3:
