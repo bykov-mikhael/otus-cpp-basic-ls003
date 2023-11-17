@@ -37,6 +37,22 @@ int main(int argc, char *argv[]) {
 
   int iMenuIndex = 0;
   std::string sName;
+  std::string sPrmName;
+  int iPrmValue;
+  int iMaxVal{100};
+
+  if (argc > 1) {
+    sPrmName = argv[1];
+    iPrmValue = std::stoi(argv[2]);
+  }
+
+  if (sPrmName == "- max") {
+    iMaxVal = iPrmValue;
+  }
+
+  if (sPrmName == "- max") {
+    ;
+  }   
 
   std::cout << "Введите имя: ";
   std::cin >> sName;
@@ -57,7 +73,7 @@ int main(int argc, char *argv[]) {
     
     switch (iMenuIndex) {
     case 1:
-      startGame(sName);
+      startGame(iMaxVal, sName);
       break;
     
     case 2:

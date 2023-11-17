@@ -4,4 +4,4 @@
 
 #pragma once
 
-bool get_RandomVal(int iRandomVal);
+bool get_RandomVal(int iMaxVal, int iRandomVal);

@@ -3,6 +3,7 @@
 
 #include <cstdlib>
 #include <ctime>
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <map>
@@ -12,9 +13,9 @@
 // Сортировка по умолчанию - по возрастанию
 
 std::multimap<int, std::string, std::greater<int>> ResultTable;
+const std::string fileResultTable = "result_table.txt";
 
-
-bool startGame(std::string &sName) {
+bool startGame(int iMaxVal, std::string &sName) {
   //число пользователя  
   int iGenericVal = 0;  
   //загаданное число
@@ -22,7 +23,7 @@ bool startGame(std::string &sName) {
   //кол-во попыток
   int iAttemps = 0;
   
-  if (get_RandomVal(iOriginalVal)) {
+  if (get_RandomVal(iMaxVal, iOriginalVal)) {
     std::cerr << "rnd timer fault" << std::endl;
   }
   
@@ -83,7 +84,23 @@ bool getResult() {
 }
 
 int saveResult(std::string &sName, int iScore) {
-  return 0;
+  // // Write new high score to the records table
+	// {
+	// 	// We should open the output file in the append mode - we don't want
+	// 	// to erase previous results.
+	// 	std::ofstream out_file{fileResultTable, std::ios_base::app};
+	// 	if (!out_file.is_open()) {
+	// 		std::cout << "Failed to open file for write: " << high_scores_filename << "!" << std::endl;
+	// 		return -1;
+	// 	}
+
+	// 	// Append new results to the table:
+	// 	out_file << user_name << ' ';
+	// 	out_file << attempts_count;
+	// 	out_file << std::endl;
+	// } // end of score here just to mark end of the logic block of code
+  
+  // return 0;
 }
 
 int loadResult(std::string &sName, int iScore) {
