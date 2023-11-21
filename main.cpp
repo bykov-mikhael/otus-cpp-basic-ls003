@@ -39,12 +39,13 @@ int main(int argc, char *argv[]) {
   std::string sName;
   std::string sPrmName;
   int iPrmValue;
-  int iMaxVal =100;
+  int iMaxVal =10;
 
-  // if (argc > 1) {
-  //   sPrmName = argv[1];
-  //   iPrmValue = std::stoi(argv[2]);
-  // }
+  if (argc > 1) {
+    sPrmName = argv[1];
+    // std::cout << " argv[1] " << argv[1] << " " << " argv[2] " << argv[2] << std::endl;
+    iPrmValue = std::stoi(argv[2]);
+  }
 
   // if (sPrmName == "- max") {
   //   iMaxVal = iPrmValue;
