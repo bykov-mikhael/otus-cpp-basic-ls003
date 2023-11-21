@@ -39,20 +39,20 @@ int main(int argc, char *argv[]) {
   std::string sName;
   std::string sPrmName;
   int iPrmValue;
-  int iMaxVal{100};
+  int iMaxVal =100;
 
-  if (argc > 1) {
-    sPrmName = argv[1];
-    iPrmValue = std::stoi(argv[2]);
-  }
+  // if (argc > 1) {
+  //   sPrmName = argv[1];
+  //   iPrmValue = std::stoi(argv[2]);
+  // }
 
-  if (sPrmName == "- max") {
-    iMaxVal = iPrmValue;
-  }
+  // if (sPrmName == "- max") {
+  //   iMaxVal = iPrmValue;
+  // }
 
-  if (sPrmName == "- table") {
-    getResult(std::stoi(argv[2]));
-  }   
+  // if (sPrmName == "- table") {
+  //   getResult(std::stoi(argv[2]));
+  // }   
 
   std::cout << "Введите имя: ";
   std::cin >> sName;

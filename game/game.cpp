@@ -73,9 +73,8 @@ int setResult(std::string &sName, int iValue, int iTerminalRecCount) {
 // вывод на печать таблицы резульататов
 bool getResult(int iRecCount) {
 
-  std::cout << "getResult" << std::endl;
-
   std::cout << std::endl << "Таблица результатов:" << std::endl;
+
   for (auto &[name, val] : ResultTable) {
     if (name <= iRecCount) {
       std::cout << "name: " << name << "\t" << "val: " << val << std::endl;
