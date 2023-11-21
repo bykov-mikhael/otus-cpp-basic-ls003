@@ -47,9 +47,9 @@ int main(int argc, char *argv[]) {
     iPrmValue = std::stoi(argv[2]);
   }
 
-  // if (sPrmName == "- max") {
-  //   iMaxVal = iPrmValue;
-  // }
+  if (sPrmName == "- max") {
+    iMaxVal = iPrmValue;
+  }
 
   // if (sPrmName == "- table") {
   //   getResult(std::stoi(argv[2]));
